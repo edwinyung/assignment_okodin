@@ -12,7 +12,7 @@ var sequelize = models.sequelize;
 var onIndex = (req, res) => {
   User.findAll()
     .then(users => {
-      res.render('application', {users:users});
+      res.render('application', { users: users });
     })
     .catch(e => res.status(500).send(e.stack));
 };
@@ -78,9 +78,9 @@ router.post('/users', (req, res) => {
     whymessage: req.body.user.profile.whymessage,
     gender: req.body.user.profile.gender,
     martial: req.body.user.profile.martial,
-    height: req.body.user.profile.height,
+    height: parseInt(req.body.user.profile.height),
     body: req.body.user.profile.body,
-    children: req.body.user.profile.children,
+    children: parseInt(req.body.user.profile.children),
     occupation: req.body.user.profile.occupation
   };
 
@@ -115,7 +115,6 @@ router.post('/users', (req, res) => {
         .spread(result => {
           // Set profile
           profile = result;
-
           // Set profileId for associations
           user.profileId = profile.id;
 
@@ -132,9 +131,10 @@ router.post('/users', (req, res) => {
         // Redirect to profile
         .then(result => {
           req.flash('success', 'Profile created!');
-          res.redirect(`/user/${req.params.id}`);
+          res.redirect(`/user/${user.id}`);
         })
         .catch(e => {
+          console.log(e);
           if (e.errors) {
             e.errors.forEach(err => req.flash('error', err.message));
             res.render('users/new');
