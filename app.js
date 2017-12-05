@@ -81,10 +81,8 @@ app.use(morganToolkit());
 // ----------------------------------------
 // Routes
 // ----------------------------------------
-app.use('/', (req, res) => {
-  req.flash('Hi!');
-  res.render('welcome/index');
-});
+var index = require('./routers/index');
+app.use('/', index);
 
 // ----------------------------------------
 // Template Engine
