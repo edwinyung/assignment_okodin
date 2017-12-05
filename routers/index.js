@@ -12,7 +12,7 @@ var sequelize = models.sequelize;
 var onIndex = (req, res) => {
   User.findAll()
     .then(users => {
-      res.render('application');
+      res.render('application', {users:users});
     })
     .catch(e => res.status(500).send(e.stack));
 };
@@ -23,7 +23,7 @@ router.get('/users', onIndex);
 // New
 // ----------------------------------------
 router.get('/users/new', (req, res) => {
-  res.render('users/new');
+  res.render('new');
 });
 
 // ----------------------------------------
@@ -132,7 +132,7 @@ router.post('/users', (req, res) => {
         // Redirect to profile
         .then(result => {
           req.flash('success', 'Profile created!');
-          res.redirect('user/new'(user.id));
+          res.redirect(`/user/${req.params.id}`);
         })
         .catch(e => {
           if (e.errors) {

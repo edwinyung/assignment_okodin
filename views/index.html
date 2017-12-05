@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Viking Tinder</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Anton|Timmana" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/style.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Viking Tinder!</a>
+    </div>
+    <div class="collapse navbar-collapse" id="main-nav-collapse">
+     <button type="button" class="btn btn-default btn-sm navbar-right">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </button>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+             <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Search</a></li>
+      <li><a href="#">Messages</a></li>
+          <li><a href="#">Likes</a></li>
+          <li><a href="#">Views</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+
+</nav>
+
+<form>
+  <div class="form-row align-items-center">
+    <h4> Gender </h4>
+  <div class="gender"><label class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" required>
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Male</span>
+  </label><label class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" required>
+    <span class="custom-control-indicator"></span>
+    <span class="custom-control-description">Female </span>
+  </label> 
+  <label class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0">
+        <input type="checkbox" class="custom-control-input">
+        <span class="custom-control-indicator"></span>
+        <span class="custom-control-description">Either</span>
+      </label></div>
+    <div class="dropdowns">
+      <h4>Other Preferences</h4>
+    <div class="col-auto" style="float:left">
+      <label class="mr-sm-2" for="inlineFormCustomSelect">Age</label>
+      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+        <option selected>Choose...</option>
+        <option value="1">18-30</option>
+        <option value="2">31-45</option>
+        <option value="3">46-89</option>
+      </select>
+    </div>
+  <div class="col-auto" style="float:left">
+      <label class="mr-sm-2" for="inlineFormCustomSelect">Distance</label>
+      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+        <option selected>Choose...</option>
+        <option value="1">5 miles</option>
+        <option value="2">10 miles</option>
+        <option value="3">10 miles+</option>
+      </select>
+    </div>
+    <div class="col-auto" style="float:left">
+      <label class="mr-sm-2" for="inlineFormCustomSelect">Body Type</label>
+      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+        <option selected>Choose...</option>
+        <option value="1">Skinny</option>
+        <option value="2">Average</option>
+        <option value="3">Large</option>
+      </select>
+    </div>
+  
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary" style="margin-left: 10px">Submit</button>
+    </div>
+    </div>
+  </div>
+</form>
+
+</html>
