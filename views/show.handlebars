@@ -1,0 +1,29 @@
+<header class="page-header">
+  <h1>User Info</h1>
+</header>
+
+<div class="stats" style="border 2px solid black">
+<pre>{{json user }}</pre>
+
+<p>First Name: {{ user.fname }}</p>
+<p>Last Name: {{ user.lname }}</p>
+<p>Username: {{ user.username }}</p>
+<p>Email: {{ user.email }}</p>
+<p>About: {{user.Profile.aboutme}}</p>
+ <p>Talents:{{user.Profile.talents}}</p>
+ <p>Why should we meet:{{user.Profile.whymessage}}</p>
+ <p>Gender:{{user.Profile.gender}}</p>
+ <p>Marital Status:{{user.Profile.martial}}</p>
+ <p>height:{{user.Profile.height}}</p>
+ <p>Body Size:{{user.Profile.body}}</p>
+ <p>Children:{{user.Profile.children}}</p>
+ <p>Occupation:{{user.Profile.occupation}}</p>
+    
+
+
+
+<a href="/users/{{ user.id }}/edit" class="btn btn-primary">Edit</a>
+  <a href="/users/{{ user.id }}?_method=delete" class="btn btn-danger">Delete</a>
+</header>
+
+</div>

@@ -37,13 +37,13 @@
 
 </nav>
 
-<form>
+<form id="tableForm" action="/search" method="post">
   <div class="form-row align-items-center">
     <h4> Gender </h4>
   <div class="gender"><label class="custom-control custom-checkbox">
     <input type="checkbox" class="custom-control-input" required>
     <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">Male</span>
+    <span class="custom-control-description" name="Male">Male</span>
   </label><label class="custom-control custom-checkbox">
     <input type="checkbox" class="custom-control-input" required>
     <span class="custom-control-indicator"></span>
@@ -60,27 +60,27 @@
       <label class="mr-sm-2" for="inlineFormCustomSelect">Age</label>
       <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
         <option selected>Choose...</option>
-        <option value="1">18-30</option>
-        <option value="2">31-45</option>
-        <option value="3">46-89</option>
+        <option value="1" name="18-30">18-30</option>
+        <option value="2" name="31-45">31-45</option>
+        <option value="3" name="46-89">46-89</option>
       </select>
     </div>
   <div class="col-auto" style="float:left">
       <label class="mr-sm-2" for="inlineFormCustomSelect">Distance</label>
       <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
         <option selected>Choose...</option>
-        <option value="1">5 miles</option>
-        <option value="2">10 miles</option>
-        <option value="3">10 miles+</option>
+        <option value="1" name="5">5 miles</option>
+        <option value="2" name="10">10 miles</option>
+        <option value="3" name="11">10 miles+</option>
       </select>
     </div>
     <div class="col-auto" style="float:left">
       <label class="mr-sm-2" for="inlineFormCustomSelect">Body Type</label>
       <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
         <option selected>Choose...</option>
-        <option value="1">Skinny</option>
-        <option value="2">Average</option>
-        <option value="3">Large</option>
+        <option value="1" name="skinny">Skinny</option>
+        <option value="2" name="average">Average</option>
+        <option value="3" name="large">Large</option>
       </select>
     </div>
   

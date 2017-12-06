@@ -37,7 +37,7 @@ app.use((req, res, next) => {
   res.locals.session = req.session;
   next();
 });
-
+app.use(express.static('public'));
 // ----------------------------------------
 // Flash Messages
 // ----------------------------------------
@@ -98,6 +98,7 @@ const hbs = expressHandlebars.create({
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
 
 // ----------------------------------------
 // Server

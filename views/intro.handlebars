@@ -1,0 +1,39 @@
+
+
+
+ <script>Handlebars.registerHelper('ifCond', function(v1, v2, options) {
+  if(v1 === v2) {
+    return options.fn(this);
+  }
+  return options.inverse(this);
+})</script>
+
+<header class="page-header">
+  <h1>ROMEOS AND JULIETS</h1>
+  
+</header>
+<div class="container">
+
+{{#if users.length }}
+<div class="row" style="float:left" height="150px">
+
+
+  <ol>
+    {{#each users as |user| }}
+
+    {{#if user.Profile.gender}}
+    <img src="../viking_guy.jpg">
+    {{else}}
+    <img src="../viking_girl.jpg">
+    {{/if}}
+    <div class="col-sm-4 item">
+      <li><a href="/users/{{ user.id }}">{{ user.username }}</a>
+      </li>
+    {{/each }}
+  </ol>
+{{else }}
+  <p class="text-danger">NO ONE AVAILABLE!</p>
+{{/if }}
+</div>
+
+</div>

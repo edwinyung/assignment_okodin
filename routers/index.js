@@ -12,7 +12,7 @@ var sequelize = models.sequelize;
 var onIndex = (req, res) => {
   User.findAll()
     .then(users => {
-      res.render('application', { users: users });
+      res.render('intro', { users: users });
     })
     .catch(e => res.status(500).send(e.stack));
 };
@@ -41,20 +41,7 @@ router.get('/users/:id/edit', (req, res) => {
     .catch(e => res.status(500).send(e.stack));
 });
 
-// ----------------------------------------
-// Show
-// ----------------------------------------
-router.get('/users/:id', (req, res) => {
-  User.findById(req.params.id)
-    .then(user => {
-      if (user) {
-        res.render('users/show', { user });
-      } else {
-        res.send(404);
-      }
-    })
-    .catch(e => res.status(500).send(e.stack));
-});
+
 
 // ----------------------------------------
 // Create
@@ -146,6 +133,20 @@ router.post('/users', (req, res) => {
   });
 });
 
+// ----------------------------------------
+// Show
+// ----------------------------------------
+router.get('/users/:id', (req, res) => {
+  User.findById(req.params.id, {include: [{ all: true, include: [{ all: true }] }]})
+    .then(user => {
+      if (user) {
+        res.render('show',{ user });
+      } else {
+        res.send(404);
+      }
+    })
+    .catch(e => res.status(500).send(e.stack));
+});
 //
 //   User.create(userParams)
 //     .then(user => {
